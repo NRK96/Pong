@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/No pressed.png-98b135f599c53a790f93d2a0db37aa81.stex"
+
+[deps]
+
+source_file="res://Assets/No pressed.png"
+source_md5="bc60773ba009ee0ee45e532775183b54"
+
+dest_files=[ "res://.import/No pressed.png-98b135f599c53a790f93d2a0db37aa81.stex" ]
+dest_md5="778b63c15f479d3f46c2ce7fc30b604b"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
