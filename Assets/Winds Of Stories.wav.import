@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Winds Of Stories.wav-3e895492c5027d64aad49af0a29a9219.sample"
+
+[deps]
+
+source_file="res://Assets/Winds Of Stories.wav"
+source_md5="60b1aa0300dc0867a167ca848032a74b"
+
+dest_files=[ "res://.import/Winds Of Stories.wav-3e895492c5027d64aad49af0a29a9219.sample" ]
+dest_md5="ce7e5b91a81e4ca390ebb2f02e936066"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
