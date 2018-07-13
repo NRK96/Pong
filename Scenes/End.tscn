@@ -1,0 +1,134 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/End.gd" type="Script" id=1]
+[ext_resource path="res://Assets/chess-defeat.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Yes-or-No.png" type="Texture" id=3]
+[ext_resource path="res://Assets/No.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Letters/Individual/Upper_R.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Letters/Individual/Lower_E.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Letters/Individual/Lower_T.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Letters/Individual/Lower_R.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Letters/Individual/Lower_Y.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Letters/Individual/_Question.png" type="Texture" id=10]
+[ext_resource path="res://Assets/defeat.wav" type="AudioStream" id=11]
+[ext_resource path="res://Scripts/theme.gd" type="Script" id=12]
+
+[node name="Node" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="." index="0"]
+
+position = Vector2( 625.775, 346.444 )
+scale = Vector2( 1.96092, 1.68983 )
+texture = ExtResource( 2 )
+
+[node name="yes" type="Button" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 858.0
+margin_top = 349.0
+margin_right = 988.0
+margin_bottom = 428.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 3 )
+flat = false
+align = 1
+
+[node name="no" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 868.0
+margin_top = 443.0
+margin_right = 977.0
+margin_bottom = 507.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 4 )
+flat = false
+align = 1
+
+[node name="Retry?" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 450, 100 )
+scale = Vector2( 1.2, 1.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="R" type="Sprite" parent="Retry?" index="0"]
+
+texture = ExtResource( 5 )
+
+[node name="e" type="Sprite" parent="Retry?" index="1"]
+
+position = Vector2( 25, 0 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="t" type="Sprite" parent="Retry?" index="2"]
+
+position = Vector2( 50, 0 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="r" type="Sprite" parent="Retry?" index="3"]
+
+position = Vector2( 72, 0 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="y" type="Sprite" parent="Retry?" index="4"]
+
+position = Vector2( 96, 0 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="?" type="Sprite" parent="Retry?" index="5"]
+
+position = Vector2( 120, 0 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="theme" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+script = ExtResource( 12 )
+
+[connection signal="pressed" from="yes" to="." method="_on_Yes_pressed"]
+
+[connection signal="pressed" from="no" to="." method="_on_No_pressed"]
+
+[connection signal="finished" from="theme" to="theme" method="_on_theme_finished"]
+
+

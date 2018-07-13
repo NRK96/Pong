@@ -1,0 +1,120 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scripts/Pong.gd" type="Script" id=1]
+[ext_resource path="res://Assets/separator.png" type="Texture" id=2]
+[ext_resource path="res://Assets/left_pallete.png" type="Texture" id=3]
+[ext_resource path="res://Assets/pong-numbers00.png" type="Texture" id=4]
+[ext_resource path="res://Assets/pong-numbers01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/pong-numbers02.png" type="Texture" id=6]
+[ext_resource path="res://Assets/pong-numbers03.png" type="Texture" id=7]
+[ext_resource path="res://Assets/pong-numbers04.png" type="Texture" id=8]
+[ext_resource path="res://Assets/pong-numbers05.png" type="Texture" id=9]
+[ext_resource path="res://Assets/pong-numbers06.png" type="Texture" id=10]
+[ext_resource path="res://Assets/pong-numbers07.png" type="Texture" id=11]
+[ext_resource path="res://Assets/pong-numbers08.png" type="Texture" id=12]
+[ext_resource path="res://Assets/pong-numbers09.png" type="Texture" id=13]
+[ext_resource path="res://Assets/pong-numbers10.png" type="Texture" id=14]
+[ext_resource path="res://Assets/pong-numbers11.png" type="Texture" id=15]
+[ext_resource path="res://Assets/ball.png" type="Texture" id=16]
+[ext_resource path="res://Assets/red_pallete.png" type="Texture" id=17]
+[ext_resource path="res://Assets/right_pallete.png" type="Texture" id=18]
+[ext_resource path="res://Assets/purple_pallete.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Winds Of Stories.wav" type="AudioStream" id=20]
+[ext_resource path="res://Scripts/theme.gd" type="Script" id=21]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 3 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Seperator" type="Sprite" parent="." index="0"]
+
+position = Vector2( 500, 300 )
+scale = Vector2( 1, 1.3 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Base" type="Sprite" parent="." index="1"]
+
+visible = false
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Left_Score" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( 260, 40 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "default"
+_sections_unfolded = [ "Transform" ]
+
+[node name="Right_Score" type="AnimatedSprite" parent="." index="3"]
+
+position = Vector2( 740, 40 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "default"
+_sections_unfolded = [ "Transform" ]
+
+[node name="Ball" type="Sprite" parent="." index="4"]
+
+position = Vector2( 500, 300 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Left" type="AnimatedSprite" parent="." index="5"]
+
+position = Vector2( 40, 300 )
+frames = SubResource( 2 )
+animation = "default"
+_sections_unfolded = [ "Transform" ]
+
+[node name="Right" type="AnimatedSprite" parent="." index="6"]
+
+position = Vector2( 980, 300 )
+frames = SubResource( 3 )
+animation = "default"
+_sections_unfolded = [ "Transform" ]
+
+[node name="theme" type="AudioStreamPlayer2D" parent="." index="7"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+script = ExtResource( 21 )
+
+[connection signal="finished" from="theme" to="theme" method="_on_theme_finished"]
+
+
